@@ -40,6 +40,8 @@ python -m http.server 8000
 ## セキュリティ / プライバシー
 
 - 登録データはブラウザのlocalStorageのみ
-- 行動データの外部送信なし。アクセス解析のみCloudflare Web Analyticsへ送信
+- 行動名・所要時間・完了回数などのアプリデータ、およびlocalStorageの内容は外部送信しない
+- アクセス解析に限りCloudflare Web Analyticsを利用し、ページ閲覧・表示性能などの計測データをCloudflareへ送信する
 - ユーザー入力はDOM APIの`textContent`で表示
 - APIキーなし。外部読み込みはCloudflare Web Analyticsの公式スクリプトのみ
+- CSPはWeb Analyticsに必要な `static.cloudflareinsights.com`（スクリプト読込）と `cloudflareinsights.com`（計測送信）のみ例外的に許可する

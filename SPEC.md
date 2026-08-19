@@ -276,13 +276,15 @@ localStorageに行動データがない場合のみ、サンプル行動を登�
 ## 14. セキュリティ・プライバシー
 
 - データは端末内のみ
-- 行動データ・localStorage内容の外部送信なし。アクセス解析データのみCloudflare Web Analyticsへ送信
+- 行動名・所要時間・完了回数などのアプリデータ、およびlocalStorageの内容は外部送信しない
+- アクセス解析に限りCloudflare Web Analyticsを利用し、ページ閲覧・表示性能などの計測データをCloudflareへ送信する
 - 個人情報取得なし
 - 位置情報取得なし
 - APIキーなし
 - ユーザー入力はtextContent等の安全なDOM APIで表示
 - ユーザー入力をinnerHTMLへ直接渡さない
 - アプリ機能用の外部ライブラリ/CDNは使用しない。Cloudflare Web Analyticsの公式スクリプトのみ例外
+- CSPではWeb Analyticsに必要な `static.cloudflareinsights.com`（スクリプト読込）と `cloudflareinsights.com`（計測送信）のみ外部接続先として許可する
 
 ---
 
