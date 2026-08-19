@@ -26,7 +26,7 @@
 - ログイン: なし
 - サーバー: なし
 - DB: なし
-- 外部API: なし
+- 外部API: なし（アクセス解析にCloudflare Web Analyticsを利用）
 
 ---
 
@@ -37,7 +37,7 @@
 - JavaScript
 - localStorage
 
-外部ライブラリは使用しない。
+アプリ機能用の外部ライブラリは使用しない。アクセス解析のみCloudflare Web Analyticsの公式スクリプトを利用する。
 
 ---
 
@@ -276,13 +276,13 @@ localStorageに行動データがない場合のみ、サンプル行動を登�
 ## 14. セキュリティ・プライバシー
 
 - データは端末内のみ
-- 外部送信なし
+- 行動データ・localStorage内容の外部送信なし。アクセス解析データのみCloudflare Web Analyticsへ送信
 - 個人情報取得なし
 - 位置情報取得なし
 - APIキーなし
 - ユーザー入力はtextContent等の安全なDOM APIで表示
 - ユーザー入力をinnerHTMLへ直接渡さない
-- 外部ライブラリ/CDNは原則使用しない
+- アプリ機能用の外部ライブラリ/CDNは使用しない。Cloudflare Web Analyticsの公式スクリプトのみ例外
 
 ---
 

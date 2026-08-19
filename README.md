@@ -23,7 +23,7 @@
 - CSS
 - JavaScript
 - localStorage
-- 外部ライブラリ / APIなし
+- 外部APIなし（Cloudflare Web Analyticsの計測スクリプトのみ利用）
 
 ## ローカル確認
 
@@ -40,16 +40,6 @@ python -m http.server 8000
 ## セキュリティ / プライバシー
 
 - 登録データはブラウザのlocalStorageのみ
-- 外部送信なし
+- 行動データの外部送信なし。アクセス解析のみCloudflare Web Analyticsへ送信
 - ユーザー入力はDOM APIの`textContent`で表示
-- 外部CDN・APIキーなし
-
-## アイコン
-
-- `favicon.ico`：ブラウザ用favicon
-- `favicon-16x16.png` / `favicon-32x32.png`：小サイズfavicon
-- `apple-touch-icon.png`：iOSホーム画面用
-- `icon-192.png` / `icon-512.png`：通常アプリアイコン
-- `icon-maskable-192.png` / `icon-maskable-512.png`：Android等のmaskable用
-- `site.webmanifest`：Web App Manifest
-- `icon-source.png` / `icon-maskable-source.png`：元画像
+- APIキーなし。外部読み込みはCloudflare Web Analyticsの公式スクリプトのみ
