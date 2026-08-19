@@ -6,7 +6,12 @@
   <meta name="theme-color" content="#fff7e9">
   <meta name="description" content="暇なとき、やりたかったことを1つ決めて、そのまま始めるための小さなアプリ。">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self'">
-  <title>暇なにする？</title>
+  <title>暇だな。</title>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,8 +19,8 @@
     <section id="homeView" class="view is-active" aria-labelledby="homeTitle">
       <header class="topbar">
         <div>
-          <p class="eyebrow">Prototype 004</p>
-          <h1 id="homeTitle">暇なにする？</h1>
+          <p class="eyebrow">Prototype 005</p>
+          <h1 id="homeTitle">暇だな。</h1>
         </div>
         <button id="openManageButton" class="icon-button" type="button" aria-label="やりたいことを管理">⚙</button>
       </header>
@@ -102,6 +107,22 @@
       <button id="completeHomeButton" class="text-button" type="button">今日はここまで</button>
     </section>
 
+    <section id="emptyView" class="view empty-view" aria-labelledby="emptyTitle">
+      <div class="empty-character" aria-hidden="true">
+        <span class="mini-eye left"></span>
+        <span class="mini-eye right"></span>
+        <span class="empty-mouth"></span>
+      </div>
+      <p class="eyebrow">うーん、候補なし。</p>
+      <h2 id="emptyTitle">この時間でできること、まだないです。</h2>
+      <p class="subtle">短時間でできる行動を追加するか、もう少し長い時間を選んでみてください。</p>
+
+      <div class="stack-actions empty-actions">
+        <button id="emptyAddButton" class="primary-button" type="button">行動を追加する</button>
+        <button id="emptyBackButton" class="secondary-button" type="button">時間を選び直す</button>
+      </div>
+    </section>
+
     <section id="manageView" class="view manage-view" aria-labelledby="manageTitle">
       <header class="topbar">
         <div>
@@ -147,6 +168,21 @@
       <button id="resetSamplesButton" class="text-button danger-text reset-button" type="button">サンプル行動に戻す</button>
     </section>
   </main>
+
+  <dialog id="appDialog" class="app-dialog" aria-labelledby="dialogTitle" aria-describedby="dialogMessage">
+    <div class="dialog-character" aria-hidden="true">
+      <span class="mini-eye left"></span>
+      <span class="mini-eye right"></span>
+      <span class="mini-mouth"></span>
+    </div>
+    <p class="eyebrow">ちょっと確認。</p>
+    <h2 id="dialogTitle" class="dialog-title"></h2>
+    <p id="dialogMessage" class="dialog-message"></p>
+    <div class="dialog-actions">
+      <button id="dialogConfirmButton" class="primary-button" type="button"></button>
+      <button id="dialogCancelButton" class="secondary-button" type="button">やめとく</button>
+    </div>
+  </dialog>
 
   <script src="script.js" defer></script>
 </body>

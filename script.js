@@ -2,6 +2,12 @@
   'use strict';
 
   const STORAGE = {
+    activities: 'himadana.activities.v1',
+    today: 'himadana.today.v1'
+  };
+
+
+  const LEGACY_STORAGE = {
     activities: 'himanani.activities.v1',
     today: 'himanani.today.v1'
   };
@@ -69,6 +75,7 @@
 
   function init() {
     cacheElements();
+    migrateLegacyStorage();
     loadActivities();
     syncTodayCount();
     bindEvents();
@@ -135,6 +142,20 @@
       enabled: true,
       completedCount: 0
     }));
+  }
+
+  function migrateLegacyStorage() {
+    Object.keys(STORAGE).forEach((key) => {
+      const currentKey = STORAGE[key];
+      const legacyKey = LEGACY_STORAGE[key];
+      if (localStorage.getItem(currentKey) !== null) return;
+
+      const legacyValue = localStorage.getItem(legacyKey);
+      if (legacyValue === null) return;
+
+      localStorage.setItem(currentKey, legacyValue);
+      localStorage.removeItem(legacyKey);
+    });
   }
 
   function loadActivities() {

@@ -1,4 +1,4 @@
-# Prototype 004 — 暇なにする？（仮）
+# Prototype 005 — 暇だな。
 
 暇なときに「やりたいのに後回しにしていること」を1つ決めて、そのままタイマーを始めるWebアプリです。
 
@@ -14,6 +14,8 @@
 - 一時停止・再開・中止
 - 完了回数と今日の達成数をlocalStorageへ保存
 - 完了後「まだ暇？ もう一回」
+- 候補0件時の専用案内画面
+- 削除・初期化・タイマー中止はアプリ内確認ダイアログ
 
 ## 技術
 
@@ -41,3 +43,13 @@ python -m http.server 8000
 - 外部送信なし
 - ユーザー入力はDOM APIの`textContent`で表示
 - 外部CDN・APIキーなし
+
+## アイコン
+
+- `favicon.ico`：ブラウザ用favicon
+- `favicon-16x16.png` / `favicon-32x32.png`：小サイズfavicon
+- `apple-touch-icon.png`：iOSホーム画面用
+- `icon-192.png` / `icon-512.png`：通常アプリアイコン
+- `icon-maskable-192.png` / `icon-maskable-512.png`：Android等のmaskable用
+- `site.webmanifest`：Web App Manifest
+- `icon-source.png` / `icon-maskable-source.png`：元画像
